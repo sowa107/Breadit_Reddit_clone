@@ -1,0 +1,34 @@
+
+<div class="tresc_scroll">
+<% @arrow = image_url("arrow.png") %>
+<% @links = Link.all.order("created_at DESC") %>
+<% @links.each do |link| %>
+<% @lt_object= LinkThumbnailer.generate(link.content)%>
+<% @obrazek= @lt_object.images.first.src.to_s %>
+<div class="Link_c">
+  <% if(model_signed_in?) %>
+  <% @model = current_model %>
+  <div class="score_c">
+    <%= link_to(image_tag(@arrow, class: "upvote_arrow"), like_link_path(link), method: :put) %>
+    <p class= "vote_score"><%= link.weighted_score %></p>
+    <%= link_to(image_tag(@arrow, class: "downvote_arrow"), dislike_link_path(link), method: :put) %>
+  </div>
+  <%else%>
+  <div class="score_c">
+    <%= link_to(image_tag(@arrow, class: "upvote_arrow"), "/models/sign_up") %>
+    <p class= "vote_score"><%= link.weighted_score %></p>
+    <%= link_to(image_tag(@arrow, class: "downvote_arrow"), "/models/sign_up") %>
+  </div>
+  <%end%>
+  <div class="link_img_c">
+    <%=link_to image_tag(@obrazek, :class => "link_img"), link.content%>
+  </div>
+  <div class="link_txt_c">
+    <h1><%= link.title %></h1>
+    <a href=<%=link.content%> class="link_link"><h2><%=truncate(link.content, :length => 35) %></h2></a>
+  </div>
+  </div>
+<% end %>
+
+
+</div>

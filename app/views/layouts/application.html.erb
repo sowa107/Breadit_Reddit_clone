@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Redditc</title>
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
+  <header>
+    <%= link_to "BreadIT", root_path, class: "head_logo" %>
+    <% if(!model_signed_in?) %>
+    <div id="nawigacja">
+      <%= link_to "Wstaw link", "/links/new", class: "nav_elem" %>
+      <%= link_to "Zaloguj się", "/models/sign_in", class: "nav_elem" %>
+      <%= link_to "Zarejestruj się", "/models/sign_up", class: "nav_elem" %>
+    </div>
+    <% else %>
+    <div id="nawigacja">
+      <%= link_to "Wstaw link", "/links/new", class: "nav_elem" %>
+      <%= link_to current_model.email, root_path, class: "nav_elem" %>
+      <%= link_to "Wyloguj się", destroy_model_session_path, method: :delete, class: "nav_elem" %>
+    </div>
+    <% end %>
+  </header>
+  <body>
+    <% if notice %>
+           <p class="notice"><%= notice %></p>
+           <%elsif alert %>
+           <p class="alert"><%= alert %></p>
+    <%end%>
+    <%= yield %>
+  </body>
+</html>

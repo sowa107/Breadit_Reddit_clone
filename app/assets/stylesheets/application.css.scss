@@ -1,0 +1,123 @@
+@import 'normalize';
+
+body{
+  font-family: 'Noto Sans', sans-serif;
+}
+
+a{
+  color: black;
+}
+
+a:hover{
+  transition: 0.5s;
+  color: turquoise;
+}
+
+.tresc_scroll {
+    margin-top: 3vh;
+    overflow: visible;
+}
+
+.link_img_c,.score_c,.link_txt_c,.Link_c, .head_logo, .nav_elem
+{
+    float: left;
+}
+
+.score_c {
+    max-width: 3%;
+    padding: 1.5%;
+    float: left;
+}
+
+.link_img{
+  width: 20vw;
+  max-height: 25vh;
+      margin-top: 1%;
+}
+
+.Link_c {
+    width: 97%;
+    border: grey solid;
+    margin-bottom: 0.5%;
+    border-radius: 20px;
+    margin-left: 1%;
+}
+
+header{
+  overflow: auto;
+  box-shadow: -2px 11px 8px -6px rgba(0,0,0,0.75);
+
+}
+
+.head_logo {
+    font-family: 'Teko', sans-serif;
+    text-decoration: none;
+    font-weight: 600;
+    color: turquoise;
+    font-size: 2em;
+    padding: 0.5em;
+    transition-duration: 0.5s;
+}
+
+.head_logo:hover {
+    color: orange;
+    transition-duration: 0.5s;
+}
+
+.nav_elem {
+    padding: 1.5em 2em 0.5em 0.5em;
+    text-decoration: none;
+}
+
+#nawigacja{
+  float: right;
+}
+
+.upvote_arrow, .downvote_arrow, .vote_score{
+  width: 100%;
+  float: left;
+}
+
+.vote_score {
+    margin-left: 42%;
+}
+
+.upvote_arrow {
+    transform: rotate(-90deg);
+}
+
+.upvote_arrow:hover, .upvote_arrow:active{
+  transition: 0.5s;
+  opacity: 100%;
+  filter: grayscale(0%);
+
+}
+
+.downvote_arrow:hover, .downvote_arrow:active{
+  transition: 0.5s;
+  opacity: 100%;
+  filter: grayscale(0%);
+  filter: hue-rotate(180deg);
+}
+
+.downvote_arrow {
+    transform: rotate(90deg);
+}
+
+.downvote_arrow, .upvote_arrow {
+opacity: 35%;
+filter: grayscale(100%);
+}
+
+.link_link{
+  text-decoration: none;
+}
+
+.link_txt_c{
+  margin-left: 2%;
+}
+
+h1 {
+    font-size: 3em;
+    margin: 0.1em 0;
+}
